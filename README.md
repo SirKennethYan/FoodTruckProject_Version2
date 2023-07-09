@@ -2,7 +2,7 @@
 
 # Description
 
-Welcome to 'Food Truck Version 2'! 🚚🌮 This enhanced Java program takes your food truck experience to the next level. Create and manage your fleet of food trucks effortlessly by inputting truck names, food types, and star ratings. Discover a range of features, including viewing all trucks, calculating the average rating, and finding the highest rated truck. We've made improvements like verification checks to ensure a smooth experience.
+Welcome to 'Food Truck Version 2'! 🚚🌮 This improved Java program takes your food truck experience to the next level. Create and manage your fleet of food trucks effortlessly by inputting truck names, food types, and star ratings. Discover a range of features, including viewing all trucks, calculating the average rating, and finding the highest rated truck. We've made improvements like verification checks to ensure a smooth experience.
 
 **FoodTruck App**
 
