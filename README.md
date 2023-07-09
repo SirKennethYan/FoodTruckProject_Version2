@@ -4,7 +4,7 @@
 
 Welcome to 'Food Truck Version 2'! 🚚🌮 This improved Java program takes your food truck experience to the next level. Create and manage your fleet of food trucks effortlessly by inputting truck names, food types, and star ratings. Discover a range of features, including viewing all trucks, calculating the average rating, and finding the highest rated truck. We've made improvements like verification checks to ensure a smooth experience.
 
-**FoodTruck App**
+**FoodTruck App:**
 
 1. Method Naming: The `getMenu()` method is renamed to `displayMenu()` in the refactored code to better reflect its purpose.
 
@@ -38,7 +38,7 @@ Welcome to 'Food Truck Version 2'! 🚚🌮 This improved Java program takes you
 
 7. Other Minor Changes: There are a few other minor changes in variable names and formatting for improved readability and consistency.
 
-**FoodTruck**
+**FoodTruck Entity:**
 
 1. Class Name: The class name is changed from `Foodtruck` to `FoodTruck` to follow standard Java naming conventions for class names.
 
