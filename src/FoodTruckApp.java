@@ -10,31 +10,54 @@ public class FoodTruckApp {
         FoodTruckApp fta = new FoodTruckApp();
         fta.run();
 
-    }// *main_Bracket
+    }// * main
 
     public void run() {
         createTrucks();
         displayMenu();
-    }
+    }// * run
 
     public void createTrucks() {
-        for (int i = 0; i < MAX_FOOD_TRUCKS; i++) {
-            System.out.println("Enter a Food Truck name, or type 'Quit': ");
-            String truckName = userInput.nextLine();
+        boolean isFirstTruck = true;
 
-            if (truckName.equalsIgnoreCase("Quit")) {
-                break;
+        for (int i = 0; i < MAX_FOOD_TRUCKS; i++) {
+            if (isFirstTruck) {
+                System.out.println("Enter a Food Truck name: ");
+            } else {
+                System.out.println("Enter another Food Truck or Press '4' to Quit: ");
             }
 
-            System.out.println("Enter food type of the Food Truck: ");
-            String foodType = userInput.nextLine();
+            String truckName = userInput.nextLine();
 
-            System.out.println("Enter rating of Food Truck: ");
-            int starRating = Integer.parseInt(userInput.nextLine());
+            if (truckName.equals("4")) {
+                break;
+            } else {
+                System.out.println("Enter food type: ");
+                String foodType = userInput.nextLine();
 
-            fleet[i] = new FoodTruck(truckName, foodType, starRating);
+                int starRating = 0;
+                boolean validRating = false;
+
+                while (!validRating) {
+                    try {
+                        System.out.println("Enter Food Truck rating (1-5): ");
+                        starRating = Integer.parseInt(userInput.nextLine());
+                        if (starRating >= 1 && starRating <= 5) {
+                            validRating = true;
+                        } else {
+                            System.out.println("Invalid rating. Please enter a number between 1 and 5.");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid rating. Please enter a valid integer.");
+                    }
+                }
+
+                fleet[i] = new FoodTruck(truckName, foodType, starRating);
+
+                isFirstTruck = false;
+            }
         }
-    }// *createTrucks_Bracket
+    }
 
     private void displayMenu() {
         boolean keepRunning = true;
@@ -67,7 +90,7 @@ public class FoodTruckApp {
                     break;
             }
         }
-    }// *displayMenu_Bracket
+    }// * displayMenu
 
     private void displayTrucks() {
         for (FoodTruck truck : fleet) {
@@ -75,7 +98,7 @@ public class FoodTruckApp {
                 System.out.println(truck);
             }
         }
-    }// *displayTrucks_Bracket
+    }// * displayTrucks
 
     private void displayAverageRating() {
         int totalRatings = 0;
@@ -90,11 +113,11 @@ public class FoodTruckApp {
 
         if (count > 0) {
             double averageRating = (double) totalRatings / count;
-            System.out.println("Average Ratings: " + averageRating);
+            System.out.println("Average rating between " + count + " Food Trucks is " + averageRating);
         } else {
             System.out.println("No food trucks available.");
         }
-    }// *displayAverageRating_Bracket
+    }// * displayAverageRating
 
     private void displayHighestRating() {
         int highestRating = 0;
@@ -112,10 +135,11 @@ public class FoodTruckApp {
 
         if (highestRatedTruck != null) {
             System.out
-                    .println("Highest Rated: " + highestRatedTruck.getTruckName() + " - " + highestRating + " Stars!");
+                    .println("Highest rated Food Truck is " + highestRatedTruck.getTruckName() + ". "
+                            + highestRating + " Stars!");
         } else {
             System.out.println("No food trucks available.");
         }
-    }// *displayHighestRating_Bracket
+    }// * displayHighestRating
 
-}// *class_Bracket
+}// * class
